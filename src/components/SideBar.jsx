@@ -1,9 +1,9 @@
-import { useState } from "react";
+
 import { Stack } from "@mui/material";
 import { categories } from "../utils/constants";
 
-const SideBar = () => {
-  const [selectedCategory, setSelectedCategory] = useState("New");
+const SideBar = ({ selectedCategory, setSelectedCategory }) => {
+  // const [selectedCategory, setSelectedCategory] = useState("New");
 
   return (
     <Stack
@@ -34,7 +34,7 @@ const SideBar = () => {
           </span>
           <span
             style={{
-              opacity: category.name === selectedCategory ? 1 : .8,
+              opacity: category.name === selectedCategory ? 1 : 0.8,
             }}
           >
             {category.name}
