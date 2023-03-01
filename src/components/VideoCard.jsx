@@ -7,12 +7,18 @@ import { demoChannelTitle, demoVideoTitle, demoThumbnailUrl, demoVideoUrl, demoC
 const VideoCard = ({video: {id: {videoId}, snippet} }) => {
 console.log(videoId, snippet);
   return (
-    <Card sx={{ width: { md: '320px', xs: '100%'}, boxShadow: 'none', borderRadius: 0}}>
+    <Card
+      sx={{
+        width: { xs: "100%", sm: "358px", md: "320px" },
+        boxShadow: "none",
+        borderRadius: 0,
+      }}
+    >
       <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}>
         <CardMedia
           image={snippet?.thumbnails?.high?.url}
           alt={snippet?.title}
-          sx={{ width: 358, height: 180 }}
+          sx={{ width: { xs: "100%", sm: "358px", md: "320px" }, height: 180 }}
         />
       </Link>
       <CardContent sx={{ background: "#1e1e1e", height: "106px" }}>
@@ -21,7 +27,13 @@ console.log(videoId, snippet);
             {snippet?.title.slice(0, 14) || demoVideoTitle.slice(0, 14)}...
           </Typography>
         </Link>
-        <Link to={snippet?.channelId ? `/channel/${snippet?.channelId}` : demoChannelUrl}>
+        <Link
+          to={
+            snippet?.channelId
+              ? `/channel/${snippet?.channelId}`
+              : demoChannelUrl
+          }
+        >
           <Typography variant="subtitle2" fontWeight="bold" color="#f4f4f4">
             {snippet?.channelTitle || demoChannelTitle}
           </Typography>
