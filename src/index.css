@@ -66,15 +66,26 @@ a {
   .category-btn{
     margin: 10px;
   }
-}
-
-@media screen and (max-width:800px){
   .copyright{
     display:none !important;
   }
 }
 
+@media screen and (max-width:800px){
+    .content {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+
+
+  }
+}
+
 @media screen and (max-width: 600px) {
+  /* .content {
+    margin: 0 auto;
+  } */
   .scroll-horizontal {
     overflow: auto !important;
   }
